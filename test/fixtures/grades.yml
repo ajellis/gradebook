@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  assignment_name: MyString
   date: 2015-10-06
-  student_id: 1
+  sutdent_id: 1
   grade: MyString
 
 two:
-  name: MyString
+  assignment_name: MyString
   date: 2015-10-06
-  student_id: 1
+  sutdent_id: 1
   grade: MyString
