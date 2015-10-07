@@ -5,5 +5,5 @@ class Grade < ActiveRecord::Base
   validates :assignment_name, presence: true
   validates :date, presence: true
   validates :student_id, presence: true
-  validates :grade, prsence: true
+  validates :grade, presence: true
 end
