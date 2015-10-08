@@ -55,9 +55,9 @@ class TeachersController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def teacher_params
       params.require(:teacher).permit(:name, :email, :password_digest)
+    end
 
-      def logged_in?
-        redirect_to root_path, notice: "You must log in to do that" unless session[:logged_in_teacher]
-      end
+    def logged_in?
+      redirect_to root_path, notice: "You must log in to do that" unless session[:logged_in_teacher]
     end
 end
