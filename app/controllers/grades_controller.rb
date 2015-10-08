@@ -1,5 +1,6 @@
 class GradesController < ApplicationController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?
 
   # GET /grades
   def index
@@ -54,5 +55,9 @@ class GradesController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def grade_params
       params.require(:grade).permit(:assignment_name, :date, :student_id, :grade)
+    end
+
+    def logged_in?
+      redirect_to root_path, notice: "You must log in to do that" unless session[:logged_in_teacher]
     end
 end

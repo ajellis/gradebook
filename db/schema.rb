@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20151006205357) do
   create_table "grades", force: :cascade do |t|
     t.string   "assignment_name"
     t.date     "date"
-    t.integer  "student_id"
+    t.integer  "sutdent_id"
     t.string   "grade"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

@@ -1,5 +1,6 @@
 class GuardiansController < ApplicationController
   before_action :set_guardian, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?
 
   # GET /guardians
   def index
@@ -54,5 +55,9 @@ class GuardiansController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def guardian_params
       params.require(:guardian).permit(:name, :email, :password_digest, :student_id)
+    end
+
+    def logged_in?
+      redirect_to session_path, notice: "You must log in to do that" unless session[:logged_in_teacher]
     end
 end

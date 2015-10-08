@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in?
   # GET /students
   def index
     @students = Student.all
@@ -54,5 +54,9 @@ class StudentsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def student_params
       params.require(:student).permit(:name, :email, :password_digest, :teacher_id)
+    end
+
+    def logged_in?
+      redirect_to root_path, notice: "You must log in to do that" unless session[:logged_in_teacher]
     end
 end
