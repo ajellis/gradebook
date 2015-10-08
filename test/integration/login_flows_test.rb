@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class LoginFlowsTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "login page works" do
+    get teachers_path
+    assert_redirected_to login_path
+    follow_redirect!
+    assert_template "new"
+  end
 end

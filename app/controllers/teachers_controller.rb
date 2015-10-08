@@ -58,6 +58,6 @@ class TeachersController < ApplicationController
     end
 
     def logged_in?
-      redirect_to root_path, notice: "You must log in to do that" unless session[:logged_in_teacher]
+      redirect_to login_path, notice: "You must log in to do that" unless session[:logged_in_teacher]
     end
 end
